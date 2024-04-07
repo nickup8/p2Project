@@ -9,7 +9,7 @@ export default function Pagination({ links }) {
                     href={link.url || " "}
                     key={link.label}
                     className={
-                        "inline-block py-2 px-3 leading-tight " +
+                        "inline-block py-2 px-3 leading-tight transition " +
                         (link.active
                             ? " bg-red-500 py-1 px-2 mx-1 text-white hover:bg-red-500"
                             : " ") +

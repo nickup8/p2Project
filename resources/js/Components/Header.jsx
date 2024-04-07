@@ -10,14 +10,20 @@ export default function Header() {
         useState(false);
     const { auth } = usePage().props;
     return (
-        <nav className="bg-white border-b border-gray-100 px-6">
+        <nav
+            className={
+                "bg-white border-b border-gray-100 px-6 fixed top-0 left-0 right-0"
+            }
+        >
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     <div className="flex">
                         <div className="shrink-0 flex items-center">
                             <Link href="/" className="flex items-center">
                                 <ApplicationLogo className="block h-7 w-auto fill-current text-gray-800" />
-                                <div className="ms-2 font-bold text-lg">P2</div>
+                                <div className="ms-2 font-bold text-lg">
+                                    Ручные пресса
+                                </div>
                             </Link>
                         </div>
 
