@@ -6,16 +6,20 @@ import TextInput from "../TextInput";
 import InputError from "../InputError";
 
 export default function FormTerminal({ terminal, disabled }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
-        code: "",
-        number: "",
-        supplier: "",
-        title: "",
+    const { data, setData, post, put, processing, errors, reset } = useForm({
+        code: terminal ? terminal.code : "",
+        number: terminal ? terminal.number : "",
+        supplier: terminal ? terminal.supplier : "",
+        title: terminal ? terminal.title : "",
     });
+
+    console.log(terminal);
 
     const submit = (e) => {
         e.preventDefault();
-        post(route("terminals.store"));
+        terminal
+            ? put(route("terminals.update", terminal.id))
+            : post(route("terminals.store"));
     };
     return (
         <form noValidate className="flex space-y-4 flex-col" onSubmit={submit}>

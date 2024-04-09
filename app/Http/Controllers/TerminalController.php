@@ -51,7 +51,9 @@ class TerminalController extends Controller
      */
     public function show(Terminal $terminal)
     {
-        //
+        return Inertia::render('Terminals/ShowTerminal', [
+            'terminal' => new TerminalResource($terminal),
+        ]);
     }
 
     /**
@@ -59,7 +61,9 @@ class TerminalController extends Controller
      */
     public function edit(Terminal $terminal)
     {
-        //
+        return Inertia::render('Terminals/EditTerminal', [
+            'terminal' => new TerminalResource($terminal),
+        ]);
     }
 
     /**
